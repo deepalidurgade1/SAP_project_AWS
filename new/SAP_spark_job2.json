@@ -1,0 +1,33 @@
+{
+  "name" : "SAP_spark_job2",
+  "description" : "",
+  "role" : "arn:aws:iam::035336637812:role/role-for-glue",
+  "executionProperty" : {
+    "maxConcurrentRuns" : 1
+  },
+  "command" : {
+    "name" : "glueetl",
+    "scriptLocation" : "s3://aws-glue-scripts-035336637812-ap-south-1/admin/SAP_spark_job2",
+    "pythonVersion" : "3"
+  },
+  "defaultArguments" : {
+    "--job-bookmark-option" : "job-bookmark-disable",
+    "--enable-job-insights" : "false",
+    "--job-language" : "python",
+    "--TempDir" : "s3://aws-glue-temporary-035336637812-ap-south-1/admin"
+  },
+  "maxRetries" : 0,
+  "allocatedCapacity" : 2,
+  "timeout" : 2880,
+  "maxCapacity" : 2.0,
+  "glueVersion" : "2.0",
+  "numberOfWorkers" : 2,
+  "workerType" : "G.1X",
+  "executionClass" : "STANDARD",
+  "sourceControlDetails" : {
+    "provider" : "GITHUB",
+    "repository" : "SAP_project_AWS",
+    "branch" : "glue_jobs",
+    "folder" : "new"
+  }
+}
